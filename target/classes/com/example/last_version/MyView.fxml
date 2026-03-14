@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import View.MazeDisplayer?>
+<BorderPane onMouseClicked="#mouseClicked" stylesheets="@MainStyle.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.last_version.MyViewController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Player Row :">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lbl_player_row" text="lbl_player_row">
+               <VBox.margin>
+                  <Insets left="100.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Player Column :">
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="lbl_player_column" text="lbl_player_column">
+               <VBox.margin>
+                  <Insets bottom="70.0" left="110.0" />
+               </VBox.margin>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#solvemaze" text="SolveMaze" />
+            <Button mnemonicParsing="false" onAction="#showingmaze" text="Shoemaze" />
+         </children>
+      </VBox>
+   </left>
+   <bottom>
+       <HBox BorderPane.alignment="CENTER">
+           <children>
+               <Label text="Status bar" />
+           </children>
+       </HBox>
+      <Button mnemonicParsing="false" onAction="#musiconof" text="Music ON/OF" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#NewClick" text="NewMaze" />
+                        <MenuItem mnemonicParsing="false" onAction="#SaveeClick" text="SaveMaze" />
+                        <MenuItem mnemonicParsing="false" onAction="#LoadClick" text="Load" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Options">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#PropertiesClick" text="Properties" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Button mnemonicParsing="false" onAction="#ExitClick" text="Exit" />
+            <Button mnemonicParsing="false" onAction="#HelpClick" text="Help" />
+            <Button mnemonicParsing="false" onAction="#AboutClick" text="About" />
+         </children>
+      </HBox>
+   </top>
+    <center>
+        <Pane BorderPane.alignment="CENTER">
+            <children>
+                <MazeDisplayer fx:id="mazeDisplayer" height="400.0" imageFileNameWinner="src/main/resources/images/winner.jpg" imageFileNameFlag="src/main/resources/images/flag-end.jpg" imageFileNameTree ="src/main/resources/images/image-tree.jpg" imageFileNamePlayer="src/main/resources/images/TSR_Sonic.png" imageFileNameWall="src/main/resources/images/wall.jpg" onKeyPressed="#keyPressed" width="400.0" />
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+        </Pane>
+    </center>
+</BorderPane>
